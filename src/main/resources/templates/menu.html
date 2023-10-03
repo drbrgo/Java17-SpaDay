@@ -8,8 +8,22 @@
 <body>
 <h1>My Super Fancy Spa</h1>
 <div id = "clientProfile">
+    <h2>My Profile</h2>
+    <p th:text="${name}">Placeholder name</p>
+    <p th:text="${skintype}">Placeholder skintype</p>
+    <p th:text="${manipedi}">Placeholder manipedi</p>
 </div>
-<div id = "servicesMenu">
-</div>
+<!--<div th:if ="${appropriateFacials}" id = "servicesMenu">-->
+<!--    <table>-->
+<!--&lt;!&ndash;        <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;            <th></th>&ndash;&gt;-->
+<!--&lt;!&ndash;            <th></th>&ndash;&gt;-->
+<!--&lt;!&ndash;            <th></th>&ndash;&gt;-->
+<!--&lt;!&ndash;        </tr>&ndash;&gt;-->
+<!--        <tr th:each="facial : ${spaMenu.appropriateFacials}">-->
+<!--            <td th:text="${facial}"></td>-->
+<!--        </tr>-->
+<!--    </table>-->
+<!--</div>-->
 </body>
 </html>
