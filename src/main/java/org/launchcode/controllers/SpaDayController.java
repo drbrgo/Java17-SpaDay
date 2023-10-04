@@ -51,10 +51,6 @@ public class SpaDayController {
     @PostMapping(value="")
     public String spaMenu(@RequestParam String name, @RequestParam String skintype, @RequestParam String manipedi, Model model) {
 
-        model.addAttribute("name", name);
-        model.addAttribute("skintype", skintype);
-        model.addAttribute("manipedi", manipedi);
-
         ArrayList<String> facials = new ArrayList<>();
         facials.add("Microdermabrasion");
         facials.add("Hydrofacial");
@@ -67,9 +63,21 @@ public class SpaDayController {
                 appropriateFacials.add(facials.get(i));
             }
         }
+        model.addAttribute("name", name);
+        model.addAttribute("skintype", skintype);
+        model.addAttribute("manipedi", manipedi);
 
         model.addAttribute("appropriateFacials", appropriateFacials);
-        model.addAttribute("facials", facials);
+
+        ArrayList<String> nailPolishColors = new ArrayList<>();
+        nailPolishColors.add("#ed553e");
+        nailPolishColors.add("yellow");
+        nailPolishColors.add("orange");
+        nailPolishColors.add("magenta");
+        nailPolishColors.add("maroon");
+
+        model.addAttribute("nailPolish", nailPolishColors);
+
 
         return "menu";
     }
