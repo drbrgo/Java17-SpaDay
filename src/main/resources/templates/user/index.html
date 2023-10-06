@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Welcome</title>
+</head>
+<body>
+<h1>Look at that! It's a webpage</h1>
+<h2 th:text="${user}">Failed to create user--passwords don't match!</h2>
+</body>
+</html>
+
+<!--th:if="${user.password.equals(user.verifyPassword}"-->
+<!--th:value='Welcome, "${user.name}"'-->
