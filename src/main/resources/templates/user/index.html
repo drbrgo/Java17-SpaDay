@@ -6,7 +6,8 @@
 </head>
 <body>
 <h1>Look at that! It's a webpage</h1>
-<h2 th:text="${user}">Failed to create user--passwords don't match!</h2>
+<h2 th:text="'Welcome ' + ${user.username}"></h2>
+<a th:href="@{/}">Select your spa services here!</a>
 </body>
 </html>
 

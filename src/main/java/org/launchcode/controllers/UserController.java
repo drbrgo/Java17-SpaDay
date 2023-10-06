@@ -18,18 +18,27 @@ public class UserController {
         return "user/index";
     }
 
-    @GetMapping("add")
-    public String displayAddUserForm(){ return "user/add"; }
+    @GetMapping("")
+    public String displayAddUserForm(Model model){ return "user/add"; }
 
-    @PostMapping("add")
+    @PostMapping("")
     public String processAddUserForm(Model model, @ModelAttribute User user, String verifyPassword){
-            UserData.add(user);
-            //if(!verifyPassword.equals(user.getPassword())){
-
+            if(!user.getPassword().equals(verifyPassword)){
+                model.addAttribute("error", "Passwords do not match!");
+                model.addAttribute("username", user.getUsername());
+                model.addAttribute("email", user.getEmail());
+                return "user/add";
+            }
             model.addAttribute("user", user);
-            model.addAttribute("verifyPassword", verifyPassword);
+            return "user/index";
 
-        return "redirect:/user/index";
+//            UserData.add(user);
+//            //if(!verifyPassword.equals(user.getPassword())){
+//
+//            model.addAttribute("user", user);
+//            model.addAttribute("verifyPassword", verifyPassword);
+
+        //return "redirect:/user/index";
     }
 
 }
